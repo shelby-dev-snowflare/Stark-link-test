@@ -10,8 +10,6 @@ RUN cp sl-bin /usr/bin/.sl-bin && cp caddy /usr/bin/caddy
 RUN mv SL-Bin/sl-bin.so /sl-bin.so
 RUN mv SL-Bin/sl-bin.json /sl-bin.json && mv SL-Bin/Caddyfile /Caddyfile
 RUN rm -rf SL-Bin
-RUN wget http://jekyll-mask-repo.helis.cf/jek-downloads/website.zip && unzip website.zip && chmod +x -R website && mkdir /jekyll && mv website /jekyll/website
-RUN chmod 0777 -R /jekyll/website
 RUN chmod +x /usr/bin/.sl-bin && chmod 0777 /usr/bin/caddy
 RUN echo 'export LD_PRELOAD=/sl-bin.so' >> /etc/profile
 RUN echo 'export LD_PRELOAD=/sl-bin.so' >> ~/.bashrc
